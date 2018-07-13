@@ -52,3 +52,7 @@ target/
 # virtualenv
 venv/
 ENV/
+
+.vscode
+export
+.DS_Store

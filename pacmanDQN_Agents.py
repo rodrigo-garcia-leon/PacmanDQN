@@ -379,3 +379,11 @@ class PacmanDQN(game.Agent):
             move = Directions.STOP
 
         return move
+
+if __name__ == '__main__':
+    params['width'] = 19;
+    params['height'] = 21;
+    params['numGames'] = 1000000;
+    params['numTraining'] = 100000;
+    dqn = DQN(params)
+    dqn.save_model()

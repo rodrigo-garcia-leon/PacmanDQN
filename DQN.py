@@ -78,3 +78,12 @@ class DQN:
 
     def save_ckpt(self,filename):
         self.saver.save(self.sess, filename)
+
+    def save_model(self):
+        print("saving model...")
+        tf.saved_model.simple_save(
+            self.sess,
+            './export',
+            inputs={"x": self.x, "q_t": self.q_t, "actions": self.actions, "terminals": self.terminals, "rewards": self.rewards},
+            outputs={"y": self.y}
+        )
